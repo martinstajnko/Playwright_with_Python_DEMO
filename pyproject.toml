@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "playwright-with-python"
+version = "0.1.0"
+description = ""
+authors = ["martinstajnko <stajnko.martin93@gmail.com>"]
+readme = "README.md"
+packages = [{include = "playwright_with_python"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+playwright = "^1.34.0"
+bs4 = "^0.0.1"
+pytest-xdist = "^3.3.1"
+python-dotenv = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
