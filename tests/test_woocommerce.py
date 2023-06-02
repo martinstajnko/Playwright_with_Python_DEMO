@@ -2,7 +2,7 @@ import pytest
 from dotenv import dotenv_values
 from playwright.sync_api import sync_playwright, Page
 
-from functions import WooCommerceBackoffice
+from functions import WooCommerceBackoffice, WooCommerceStore
 
 
 @pytest.fixture(autouse=True)
@@ -26,10 +26,13 @@ class TestWooCommerceBackoffice:
 
 
 
-class TestWooCommerceE2E:
+class TestWooCommerceStore:
 
-    def test_e2e_process(self, page: Page) -> None:
-        pass
+    def test_add_product_to_cart(self, page: Page) -> None:
+        WooCommerceStore().add_product_to_cart(page)
+
+    def test_add_product_to_cart_and_checkout(self, page: Page) -> None:
+        WooCommerceStore().add_product_to_cart_and_checkout(page)
 
 
     
